@@ -8,7 +8,6 @@ import PageBodyScrollContainer from "@/components/layout/PageBodyScrollContainer
 import PageBodyStickyContainer from "@/components/layout/PageBodyStickyContainer/PageBodyStickyContainer";
 import TracesSpansTab from "@/components/pages/TracesPage/TracesSpansTab/TracesSpansTab";
 import ThreadsTab from "@/components/pages/TracesPage/ThreadsTab/ThreadsTab";
-import MetricsTab from "@/components/pages/TracesPage/MetricsTab/MetricsTab";
 import RulesTab from "@/components/pages/TracesPage/RulesTab/RulesTab";
 import AnnotationQueuesTab from "@/components/pages/TracesPage/AnnotationQueuesTab/AnnotationQueuesTab";
 import { Button } from "@/components/ui/button";
@@ -92,9 +91,6 @@ const TracesPage = () => {
               <TabsTrigger variant="underline" value="threads">
                 Threads
               </TabsTrigger>
-              <TabsTrigger variant="underline" value="metrics">
-                Metrics
-              </TabsTrigger>
               <TabsTrigger variant="underline" value="rules">
                 Online evaluation
               </TabsTrigger>
@@ -119,9 +115,6 @@ const TracesPage = () => {
           </TabsContent>
           <TabsContent value="threads">
             <ThreadsTab projectId={projectId} projectName={projectName} />
-          </TabsContent>
-          <TabsContent value="metrics">
-            <MetricsTab projectId={projectId} />
           </TabsContent>
           <TabsContent value="rules">
             <RulesTab projectId={projectId} />

@@ -22,7 +22,6 @@ import FeedbackScoreHoverCard from "@/components/shared/FeedbackScoreTag/Feedbac
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import TagList from "../TagList/TagList";
 import InputOutputTab from "./InputOutputTab";
-import MetadataTab from "./MatadataTab";
 import AgentGraphTab from "./AgentGraphTab";
 import PromptsTab from "./PromptsTab";
 import { formatDuration, formatDate } from "@/lib/date";
@@ -87,7 +86,8 @@ const TraceDataViewer: React.FunctionComponent<TraceDataViewerProps> = ({
 
   const selectedTab =
     (tab === "graph" && !hasSpanAgentGraph) ||
-    (tab === "prompts" && !hasPrompts)
+    (tab === "prompts" && !hasPrompts) ||
+    tab === "metadata"
       ? "input"
       : tab;
 
@@ -293,9 +293,6 @@ const TraceDataViewer: React.FunctionComponent<TraceDataViewerProps> = ({
                 {...EXPLAINERS_MAP[EXPLAINER_ID.what_are_feedback_scores]}
               />
             </TabsTrigger>
-            <TabsTrigger variant="underline" value="metadata">
-              Metadata
-            </TabsTrigger>
             {hasPrompts && (
               <TabsTrigger variant="underline" value="prompts">
                 Prompts
@@ -343,9 +340,6 @@ const TraceDataViewer: React.FunctionComponent<TraceDataViewerProps> = ({
                 </div>
               )}
             </div>
-          </TabsContent>
-          <TabsContent value="metadata">
-            <MetadataTab data={data} search={search} />
           </TabsContent>
           {hasPrompts && (
             <TabsContent value="prompts">

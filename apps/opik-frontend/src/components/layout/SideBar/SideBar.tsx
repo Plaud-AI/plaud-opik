@@ -1,85 +1,25 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "@tanstack/react-router";
 
-import {
-  Bell,
-  Database,
-  FlaskConical,
-  LayoutGrid,
-  FileTerminal,
-  LucideHome,
-  Blocks,
-  Bolt,
-  Brain,
-  ChevronLeft,
-  ChevronRight,
-  SparklesIcon,
-  UserPen,
-  BarChart3,
-  Zap,
-} from "lucide-react";
+import { LayoutGrid, ChevronLeft, ChevronRight } from "lucide-react";
 import { keepPreviousData } from "@tanstack/react-query";
 
 import useAppStore from "@/store/AppStore";
 import useProjectsList from "@/api/projects/useProjectsList";
-import useDatasetsList from "@/api/datasets/useDatasetsList";
-import useExperimentsList from "@/api/datasets/useExperimentsList";
-import useRulesList from "@/api/automations/useRulesList";
-import useOptimizationsList from "@/api/optimizations/useOptimizationsList";
-import useAlertsList from "@/api/alerts/useAlertsList";
 import { OnChangeFn } from "@/types/shared";
 import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 import Logo from "@/components/layout/Logo/Logo";
 import usePluginsStore from "@/store/PluginsStore";
-import ProvideFeedbackDialog from "@/components/layout/SideBar/FeedbackDialog/ProvideFeedbackDialog";
-import usePromptsList from "@/api/prompts/usePromptsList";
-import useAnnotationQueuesList from "@/api/annotation-queues/useAnnotationQueuesList";
-import { useOpenQuickStartDialog } from "@/components/pages-shared/onboarding/QuickstartDialog/QuickstartDialog";
-import GitHubStarListItem from "@/components/layout/SideBar/GitHubStarListItem/GitHubStarListItem";
-import SupportHubDropdown from "@/components/layout/SideBar/SupportHubDropdown/SupportHubDropdown";
 import SidebarMenuItem, {
   MENU_ITEM_TYPE,
   MenuItem,
   MenuItemGroup,
 } from "@/components/layout/SideBar/MenuItem/SidebarMenuItem";
-import { FeatureToggleKeys } from "@/types/feature-toggles";
-import { useIsFeatureEnabled } from "@/components/feature-toggles-provider";
-import { ACTIVE_OPTIMIZATION_FILTER } from "@/lib/optimizations";
 
 const HOME_PATH = "/$workspaceName/home";
-const RUNNING_OPTIMIZATION_REFETCH_INTERVAL = 5000;
-
-const CONFIGURATION_ITEM: MenuItem = {
-  id: "configuration",
-  path: "/$workspaceName/configuration",
-  type: MENU_ITEM_TYPE.router,
-  icon: Bolt,
-  label: "Configuration",
-};
 
 const MENU_ITEMS: MenuItemGroup[] = [
-  {
-    id: "home",
-    items: [
-      {
-        id: "home",
-        path: "/$workspaceName/home",
-        type: MENU_ITEM_TYPE.router,
-        icon: LucideHome,
-        label: "Home",
-      },
-      {
-        id: "dashboards",
-        path: "/$workspaceName/dashboards",
-        type: MENU_ITEM_TYPE.router,
-        icon: BarChart3,
-        label: "Dashboards",
-        featureFlag: FeatureToggleKeys.DASHBOARDS_ENABLED,
-      },
-    ],
-  },
   {
     id: "observability",
     label: "Observability",
@@ -94,103 +34,6 @@ const MENU_ITEMS: MenuItemGroup[] = [
       },
     ],
   },
-  {
-    id: "evaluation",
-    label: "Evaluation",
-    items: [
-      {
-        id: "experiments",
-        path: "/$workspaceName/experiments",
-        type: MENU_ITEM_TYPE.router,
-        icon: FlaskConical,
-        label: "Experiments",
-        count: "experiments",
-      },
-      {
-        id: "datasets",
-        path: "/$workspaceName/datasets",
-        type: MENU_ITEM_TYPE.router,
-        icon: Database,
-        label: "Datasets",
-        count: "datasets",
-      },
-      {
-        id: "annotation_queues",
-        path: "/$workspaceName/annotation-queues",
-        type: MENU_ITEM_TYPE.router,
-        icon: UserPen,
-        label: "Annotation queues",
-        count: "annotation_queues",
-      },
-    ],
-  },
-  {
-    id: "prompt_engineering",
-    label: "Prompt engineering",
-    items: [
-      {
-        id: "prompts",
-        path: "/$workspaceName/prompts",
-        type: MENU_ITEM_TYPE.router,
-        icon: FileTerminal,
-        label: "Prompt library",
-        count: "prompts",
-      },
-      {
-        id: "playground",
-        path: "/$workspaceName/playground",
-        type: MENU_ITEM_TYPE.router,
-        icon: Blocks,
-        label: "Playground",
-      },
-    ],
-  },
-  {
-    id: "optimization",
-    label: "Optimization",
-    items: [
-      {
-        id: "optimization_studio",
-        path: "/$workspaceName/optimization-studio",
-        type: MENU_ITEM_TYPE.router,
-        icon: Zap,
-        label: "Optimization studio",
-        showIndicator: "running_optimizations",
-        featureFlag: FeatureToggleKeys.OPTIMIZATION_STUDIO_ENABLED,
-      },
-      {
-        id: "optimizations",
-        path: "/$workspaceName/optimizations",
-        type: MENU_ITEM_TYPE.router,
-        icon: SparklesIcon,
-        label: "Optimization runs",
-        count: "optimizations",
-      },
-    ],
-  },
-  {
-    id: "production",
-    label: "Production",
-    items: [
-      {
-        id: "online_evaluation",
-        path: "/$workspaceName/online-evaluation",
-        type: MENU_ITEM_TYPE.router,
-        icon: Brain,
-        label: "Online evaluation",
-        count: "rules",
-      },
-      {
-        id: "alerts",
-        path: "/$workspaceName/alerts",
-        type: MENU_ITEM_TYPE.router,
-        icon: Bell,
-        label: "Alerts",
-        count: "alerts",
-        featureFlag: FeatureToggleKeys.TOGGLE_ALERTS_ENABLED,
-      },
-    ],
-  },
 ];
 
 type SideBarProps = {
@@ -202,17 +45,8 @@ const SideBar: React.FunctionComponent<SideBarProps> = ({
   expanded,
   setExpanded,
 }) => {
-  const [openProvideFeedback, setOpenProvideFeedback] = useState(false);
-  const { open: openQuickstart } = useOpenQuickStartDialog();
-
   const { activeWorkspaceName: workspaceName } = useAppStore();
-  const isOptimizationStudioEnabled = useIsFeatureEnabled(
-    FeatureToggleKeys.OPTIMIZATION_STUDIO_ENABLED,
-  );
   const LogoComponent = usePluginsStore((state) => state.Logo);
-  const SidebarInviteDevButton = usePluginsStore(
-    (state) => state.SidebarInviteDevButton,
-  );
 
   const { data: projectData } = useProjectsList(
     {
@@ -226,124 +60,8 @@ const SideBar: React.FunctionComponent<SideBarProps> = ({
     },
   );
 
-  const { data: datasetsData } = useDatasetsList(
-    {
-      workspaceName,
-      page: 1,
-      size: 1,
-    },
-    {
-      placeholderData: keepPreviousData,
-      enabled: expanded,
-    },
-  );
-
-  const { data: experimentsData } = useExperimentsList(
-    {
-      workspaceName,
-      page: 1,
-      size: 1,
-    },
-    {
-      placeholderData: keepPreviousData,
-      enabled: expanded,
-    },
-  );
-
-  const { data: promptsData } = usePromptsList(
-    {
-      workspaceName,
-      page: 1,
-      size: 1,
-    },
-    {
-      placeholderData: keepPreviousData,
-      enabled: expanded,
-    },
-  );
-
-  const { data: rulesData } = useRulesList(
-    {
-      workspaceName,
-      page: 1,
-      size: 1,
-    },
-    {
-      placeholderData: keepPreviousData,
-      enabled: expanded,
-    },
-  );
-
-  const { data: optimizationsData } = useOptimizationsList(
-    {
-      workspaceName,
-      page: 1,
-      size: 1,
-    },
-    {
-      placeholderData: keepPreviousData,
-      enabled: expanded,
-    },
-  );
-
-  const { data: runningOptimizationsData } = useOptimizationsList(
-    {
-      workspaceName,
-      page: 1,
-      size: 1,
-      filters: ACTIVE_OPTIMIZATION_FILTER,
-    },
-    {
-      placeholderData: keepPreviousData,
-      enabled: !!workspaceName && isOptimizationStudioEnabled,
-      refetchInterval: (query) => {
-        // refetch every 5 seconds if there are running optimizations
-        const data = query.state.data;
-        return data?.total && data.total > 0
-          ? RUNNING_OPTIMIZATION_REFETCH_INTERVAL
-          : false;
-      },
-    },
-  );
-
-  const { data: annotationQueuesData } = useAnnotationQueuesList(
-    {
-      workspaceName,
-      page: 1,
-      size: 1,
-    },
-    {
-      placeholderData: keepPreviousData,
-      enabled: expanded,
-    },
-  );
-
-  const { data: alertsData } = useAlertsList(
-    {
-      workspaceName,
-      page: 1,
-      size: 1,
-    },
-    {
-      placeholderData: keepPreviousData,
-      enabled: expanded,
-    },
-  );
-
   const countDataMap: Record<string, number | undefined> = {
     projects: projectData?.total,
-    datasets: datasetsData?.total,
-    experiments: experimentsData?.total,
-    prompts: promptsData?.total,
-    rules: rulesData?.total,
-    optimizations: optimizationsData?.total,
-    annotation_queues: annotationQueuesData?.total,
-    alerts: alertsData?.total,
-  };
-
-  const indicatorDataMap: Record<string, boolean> = {
-    running_optimizations:
-      !!runningOptimizationsData?.total && runningOptimizationsData.total > 0,
   };
 
   const logo = LogoComponent ? (
@@ -359,34 +77,8 @@ const SideBar: React.FunctionComponent<SideBarProps> = ({
         item={item}
         expanded={expanded}
         count={countDataMap[item.count!]}
-        hasIndicator={indicatorDataMap[item.showIndicator!]}
       />
     ));
-  };
-
-  const renderBottomItems = () => {
-    const bottomItems = [
-      <SidebarMenuItem
-        key="configuration"
-        item={CONFIGURATION_ITEM}
-        expanded={expanded}
-        compact
-      />,
-      <SupportHubDropdown
-        key="support-hub"
-        expanded={expanded}
-        openQuickstart={openQuickstart}
-        openProvideFeedback={() => setOpenProvideFeedback(true)}
-      />,
-    ];
-
-    if (SidebarInviteDevButton) {
-      bottomItems.push(
-        <SidebarInviteDevButton key="inviteDevButton" expanded={expanded} />,
-      );
-    }
-
-    return bottomItems;
   };
 
   const renderGroups = (groups: MenuItemGroup[]) => {
@@ -440,21 +132,9 @@ const SideBar: React.FunctionComponent<SideBarProps> = ({
             <ul className="flex flex-col gap-1 pb-2">
               {renderGroups(MENU_ITEMS)}
             </ul>
-            <div className="flex flex-col gap-3">
-              <Separator />
-              <ul className="flex flex-col">
-                <GitHubStarListItem expanded={expanded} />
-                {renderBottomItems()}
-              </ul>
-            </div>
           </div>
         </div>
       </aside>
-
-      <ProvideFeedbackDialog
-        open={openProvideFeedback}
-        setOpen={setOpenProvideFeedback}
-      />
     </>
   );
 };
