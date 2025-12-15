@@ -13,13 +13,13 @@ politeness_check = PolitenessCheck(
 # Create a Guard with the validator
 guard: Guard = Guard().use_many(politeness_check)
 
-# Track the Guard with Opik
+# Track the Guard with PLAUD
 guard = track_guardrails(  # HIGHLIGHTED_LINE
     guard,  # HIGHLIGHTED_LINE
     project_name="guardrails-integration-example",  # HIGHLIGHTED_LINE
 )  # HIGHLIGHTED_LINE
 
-# Validate some text - this will be logged to Opik
+# Validate some text - this will be logged to PLAUD
 guard.validate("Would you be so kind to pass me a cup of tea?")
 
 guard.validate("Shut your mouth up and give me the tea.")

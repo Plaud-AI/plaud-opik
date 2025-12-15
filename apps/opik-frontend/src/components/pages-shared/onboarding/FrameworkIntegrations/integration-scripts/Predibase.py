@@ -17,7 +17,7 @@ model = Predibase(
 # Create Opik tracer
 opik_tracer = OpikTracer(tags=["predibase", "mistral-7b"])  # HIGHLIGHTED_LINE
 
-# Test the model with Opik tracing
+# Test the model with PLAUD tracing
 response = model.invoke(
     "Can you recommend me a nice dry wine?",
     config={

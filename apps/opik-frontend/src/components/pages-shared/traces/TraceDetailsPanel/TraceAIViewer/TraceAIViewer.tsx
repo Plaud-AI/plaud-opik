@@ -215,7 +215,7 @@ const TraceAIViewer: React.FC<TraceAIViewerProps> = ({
     return (
       <div className="flex min-h-full flex-col items-center justify-center gap-3 py-2">
         <div className="comet-title-m text-center text-foreground">
-          Debug your trace with OpikAssist
+          Debug your trace with PLAUDAssist
         </div>
         <div className="comet-body-s mb-8 text-center text-muted-slate">
           Get AI-powered help spotting issues, understanding behavior, or

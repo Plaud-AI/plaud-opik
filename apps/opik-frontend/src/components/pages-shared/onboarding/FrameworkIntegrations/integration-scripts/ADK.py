@@ -71,7 +71,7 @@ basic_tracer = OpikTracer(  # HIGHLIGHTED_LINE
 # Initialize LiteLLM with OpenAI gpt-4o
 llm = LiteLlm(model="openai/gpt-4o")
 
-# Create the basic agent with Opik callbacks
+# Create the basic agent with PLAUD callbacks
 basic_agent = LlmAgent(
     name="weather_time_agent",
     model=llm,

@@ -10,7 +10,7 @@ client = OpenAI(
     # api_key="YOUR_OPENROUTER_API_KEY",
 )
 
-# Track all OpenRouter API calls with Opik
+# Track all OpenRouter API calls with PLAUD
 client = track_openai(client)  # HIGHLIGHTED_LINE
 
 # Optional headers for OpenRouter leaderboard

@@ -66,5 +66,5 @@ agent = Agent(
     },
 )
 
-# Use the agent - this will be automatically traced to Opik
+# Use the agent - this will be automatically traced to PLAUD
 results = agent("Hi, where can I eat in San Francisco?")

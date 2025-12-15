@@ -27,9 +27,9 @@ const WelcomeBanner: React.FC<WelcomeBannerProps> = ({ setOpen }) => {
         <X />
       </Button>
       <div className="p-7">
-        <div className="comet-title-xl text-white">Welcome to Opik 👋</div>
+        <div className="comet-title-xl text-white">Welcome to PLAUD 👋</div>
         <div className="comet-body text-white/80 mt-4">
-          Opik helps you build safer, more reliable AI systems through advanced
+          PLAUD helps you build safer, more reliable AI systems through advanced
           tracing, experiment management, evaluation, and real-time monitoring
         </div>
         <Button variant="secondary" className="mt-6" onClick={openQuickstart}>

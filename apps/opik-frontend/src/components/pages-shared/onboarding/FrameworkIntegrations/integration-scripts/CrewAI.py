@@ -4,7 +4,7 @@ from opik.integrations.crewai import track_crewai  # HIGHLIGHTED_LINE
 
 configure()  # HIGHLIGHTED_LINE
 
-# Track CrewAI runs with Opik
+# Track CrewAI runs with PLAUD
 track_crewai(project_name="crewai-integration-demo")  # HIGHLIGHTED_LINE
 
 

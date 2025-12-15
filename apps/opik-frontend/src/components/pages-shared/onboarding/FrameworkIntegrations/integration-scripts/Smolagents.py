@@ -36,7 +36,7 @@ model = OpenAIServerModel(model_id="gpt-4o")
 
 agent = CodeAgent(tools=[WebSearchTool()], model=model, stream_outputs=True)
 
-# Run the agent - this will be automatically traced to Opik
+# Run the agent - this will be automatically traced to PLAUD
 agent.run(
     "How many seconds would it take for a leopard at full speed to run through Pont des Arts?"
 )

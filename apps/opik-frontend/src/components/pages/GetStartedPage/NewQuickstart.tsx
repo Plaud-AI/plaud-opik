@@ -50,13 +50,13 @@ const NewQuickstart: React.FunctionComponent<NewQuickstartProps> = ({
       <div className="mx-auto max-w-[1040px]">
         <div className="mb-3 mt-6 flex items-center justify-between md:mt-10">
           <h1 className="md:comet-title-xl comet-title-l">
-            Get started with Opik
+            Get started with PLAUD
           </h1>
           {/* <LoggedDataStatus status="waiting" /> */}
         </div>
         <div className="comet-body-s mb-10 text-muted-slate">
-          Opik helps you improve your LLM features by tracking what happens
-          behind the scenes. Integrate Opik to unlock evaluations, experiments,
+          PLAUD helps you improve your LLM features by tracking what happens
+          behind the scenes. Integrate PLAUD to unlock evaluations, experiments,
           and debugging.
         </div>
 

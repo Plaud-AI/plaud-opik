@@ -4,8 +4,9 @@ import useLocalStorageState from "use-local-storage-state";
 import WorkspaceStatisticSection from "@/components/pages/HomePage/WorkspaceStatisticSection";
 import OverallPerformanceSection from "@/components/pages/HomePage/OverallPerformanceSection";
 import ObservabilitySection from "@/components/pages/HomePage/ObservabilitySection";
-import EvaluationSection from "@/components/pages/HomePage/EvaluationSection";
-import OptimizationRunsSection from "@/components/pages/HomePage/OptimizationRunsSection";
+// Hidden for PLAUD customization
+// import EvaluationSection from "@/components/pages/HomePage/EvaluationSection";
+// import OptimizationRunsSection from "@/components/pages/HomePage/OptimizationRunsSection";
 import WelcomeBanner from "@/components/pages/HomePage/WecomeBanner";
 
 const SHOW_WELCOME_MESSAGE_KEY = "home-welcome-message";
@@ -23,15 +24,16 @@ const HomePage = () => {
       ) : (
         <div className="mb-4 flex items-center justify-between">
           <h1 className="comet-title-l truncate break-words">
-            Welcome back to Opik
+            Welcome back to PLAUD
           </h1>
         </div>
       )}
       <WorkspaceStatisticSection />
       <OverallPerformanceSection />
       <ObservabilitySection />
-      <EvaluationSection />
-      <OptimizationRunsSection />
+      {/* Hidden for PLAUD customization */}
+      {/* <EvaluationSection /> */}
+      {/* <OptimizationRunsSection /> */}
     </div>
   );
 };

@@ -107,7 +107,7 @@ const HelpGuideDialog: React.FunctionComponent<HelpGuideDialogProps> = ({
                   rel="noopener noreferrer"
                   className="comet-body-s flex items-center gap-1 text-primary hover:underline dark:text-primary-hover"
                 >
-                  Getting started with Opik
+                  Getting started with PLAUD
                   <ExternalLink className="size-4" />
                 </a>
                 <a
@@ -125,7 +125,7 @@ const HelpGuideDialog: React.FunctionComponent<HelpGuideDialogProps> = ({
                   rel="noopener noreferrer"
                   className="comet-body-s flex items-center gap-1 text-primary hover:underline dark:text-primary-hover"
                 >
-                  Integrate Opik with your LLM application
+                  Integrate PLAUD with your LLM application
                   <ExternalLink className="size-4" />
                 </a>
                 <a

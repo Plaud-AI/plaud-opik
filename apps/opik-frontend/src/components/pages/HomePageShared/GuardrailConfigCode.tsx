@@ -38,7 +38,7 @@ guard = Guardrail(
     ]
 )
 
-result = guard.validate("How can I start with evaluation in Opik platform?")
+result = guard.validate("How can I start with evaluation in PLAUD platform?")
 # Guardrail passes
 
 try:
@@ -47,7 +47,7 @@ except exceptions.GuardrailValidationFailed as e:
     print("Guardrail failed:", e)
 
 try:
-    result = guard.validate("John Doe, here is my card number 4111111111111111 how can I use it in Opik platform?.")
+    result = guard.validate("John Doe, here is my card number 4111111111111111 how can I use it in PLAUD platform?.")
 except exceptions.GuardrailValidationFailed as e:
     print("Guardrail failed:", e)`}
       />

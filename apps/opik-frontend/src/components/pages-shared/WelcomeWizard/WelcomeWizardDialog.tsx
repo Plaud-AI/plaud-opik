@@ -148,7 +148,7 @@ const WelcomeWizardDialog: React.FunctionComponent<
         onPointerDownOutside={(e) => e.preventDefault()}
       >
         <DialogHeader>
-          <DialogTitle>Welcome to Opik 🚀</DialogTitle>
+          <DialogTitle>Welcome to PLAUD 🚀</DialogTitle>
           <DialogDescription>
             We&apos;re moving fast! Tell us who you are so we can share the most
             relevant guides and updates with you.
@@ -308,7 +308,7 @@ const WelcomeWizardDialog: React.FunctionComponent<
                 onClick={handleDismiss}
                 className="w-full text-sm text-muted-foreground"
               >
-                Skip and go to Opik
+                Skip and go to PLAUD
               </Button>
             </div>
           </form>

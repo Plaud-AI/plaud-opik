@@ -3,7 +3,7 @@ export const FINAL_LOG_TEMPLATE = "FINAL_LOG_TEMPLATE";
 
 export const integrationLogsMap: Record<string, string[]> = {
   FunctionDecorators: [
-    "Initializing Opik demo console",
+    "Initializing PLAUD demo console",
     "%cmd% pip install opik",
     "%cmd% python function_decorators_example.py",
     "Hello! I'm here to assist you with any specific information you may be looking for or help you explore topics of interest. How can I assist you today?",
@@ -12,7 +12,7 @@ export const integrationLogsMap: Record<string, string[]> = {
     "%cmd% sh shutdown_console.sh",
   ],
   OpenAI: [
-    "Initializing Opik demo console",
+    "Initializing PLAUD demo console",
     "%cmd% pip install openai",
     "%cmd% python openai_example.py",
     "Code and circuits hum",
@@ -23,7 +23,7 @@ export const integrationLogsMap: Record<string, string[]> = {
     "%cmd% sh shutdown_console.sh",
   ],
   Anthropic: [
-    "Initializing Opik demo console",
+    "Initializing PLAUD demo console",
     "%cmd% pip install anthropic",
     "%cmd% python anthropic_example.py",
     "Here's a haiku about AI engineering:",
@@ -35,7 +35,7 @@ export const integrationLogsMap: Record<string, string[]> = {
     "%cmd% sh shutdown_console.sh",
   ],
   Bedrock: [
-    "Initializing Opik demo console",
+    "Initializing PLAUD demo console",
     "%cmd% pip install awscli",
     "%cmd% python bedrock_example.py",
     "Code crafted with care",
@@ -43,11 +43,11 @@ export const integrationLogsMap: Record<string, string[]> = {
     "Future's subtle dance",
     REAL_LOGS_PLACEHOLDER,
     FINAL_LOG_TEMPLATE,
-    "Logged traces to your Opik dashboard, [view them here](https://example.com)",
+    "Logged traces to your PLAUD dashboard, [view them here](https://example.com)",
     "%cmd% sh shutdown_console.sh",
   ],
   Gemini: [
-    "Initializing Opik demo console",
+    "Initializing PLAUD demo console",
     "%cmd% pip install gemini-sdk",
     "%cmd% python gemini_example.py",
     "Code and knowledge fuse,",
@@ -58,7 +58,7 @@ export const integrationLogsMap: Record<string, string[]> = {
     "%cmd% sh shutdown_console.sh",
   ],
   LangChain: [
-    "Initializing Opik demo console",
+    "Initializing PLAUD demo console",
     "%cmd% pip install langchain",
     "%cmd% python langchain_example.py",
     "Code and circuits merge",
@@ -69,7 +69,7 @@ export const integrationLogsMap: Record<string, string[]> = {
     "%cmd% sh shutdown_console.sh",
   ],
   LangGraph: [
-    "Initializing Opik demo console",
+    "Initializing PLAUD demo console",
     "%cmd% pip install langgraph",
     "%cmd% python langgraph_example.py",
     "{'question': 'Hello, how are you?', 'classification': 'greeting', 'response': 'Hello! How can I help you today?'}",
@@ -78,7 +78,7 @@ export const integrationLogsMap: Record<string, string[]> = {
     "%cmd% sh shutdown_console.sh",
   ],
   LlamaIndex: [
-    "Initializing Opik demo console",
+    "Initializing PLAUD demo console",
     "%cmd% pip install llama-index",
     "%cmd% python llamaindex_example.py",
     "The author focused on writing short stories and programming during his time before college.",
@@ -87,7 +87,7 @@ export const integrationLogsMap: Record<string, string[]> = {
     "%cmd% sh shutdown_console.sh",
   ],
   Haystack: [
-    "Initializing Opik demo console",
+    "Initializing PLAUD demo console",
     "%cmd% pip install haystack",
     "%cmd% python haystack_example.py",
     "Code and circuits spin",
@@ -98,7 +98,7 @@ export const integrationLogsMap: Record<string, string[]> = {
     "%cmd% sh shutdown_console.sh",
   ],
   LiteLLM: [
-    "Initializing Opik demo console",
+    "Initializing PLAUD demo console",
     "%cmd% pip install litellm",
     "%cmd% python litellm_example.py",
     "Code evolves with time",
@@ -109,7 +109,7 @@ export const integrationLogsMap: Record<string, string[]> = {
     "%cmd% sh shutdown_console.sh",
   ],
   Ragas: [
-    "Initializing Opik demo console",
+    "Initializing PLAUD demo console",
     "%cmd% pip install ragas",
     "%cmd% python ragas_example.py",
     "Answer Relevancy score: 0.999",
@@ -118,7 +118,7 @@ export const integrationLogsMap: Record<string, string[]> = {
     "%cmd% sh shutdown_console.sh",
   ],
   Groq: [
-    "Initializing Opik demo console",
+    "Initializing PLAUD demo console",
     "%cmd% pip install groq",
     "%cmd% python groq_example.py",
     "Here is a haiku about AI engineering:",
@@ -130,7 +130,7 @@ export const integrationLogsMap: Record<string, string[]> = {
     "%cmd% sh shutdown_console.sh",
   ],
   DSPy: [
-    "Initializing Opik demo console",
+    "Initializing PLAUD demo console",
     "%cmd% pip install dspy",
     "%cmd% python dspy_example.py",
     `Prediction(

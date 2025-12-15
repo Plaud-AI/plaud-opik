@@ -14,8 +14,8 @@ const QuickstartDialog: React.FC = () => {
           Quickstart guide
         </SheetTitle>
         <div className="comet-body-s mb-10 text-muted-slate">
-          Opik helps you improve your LLM features by tracking what happens
-          behind the scenes. Integrate Opik to unlock evaluations, experiments,
+          PLAUD helps you improve your LLM features by tracking what happens
+          behind the scenes. Integrate PLAUD to unlock evaluations, experiments,
           and debugging.
         </div>
 

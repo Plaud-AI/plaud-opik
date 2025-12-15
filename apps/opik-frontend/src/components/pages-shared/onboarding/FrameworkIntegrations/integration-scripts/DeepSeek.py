@@ -10,7 +10,7 @@ client = OpenAI(
     # api_key="<DeepSeek API Key>",
 )
 
-# Wrap your OpenAI client to track all calls to Opik
+# Wrap your OpenAI client to track all calls to PLAUD
 client = track_openai(client)  # HIGHLIGHTED_LINE
 
 # Call the API

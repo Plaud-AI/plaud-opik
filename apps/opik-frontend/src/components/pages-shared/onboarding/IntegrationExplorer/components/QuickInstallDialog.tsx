@@ -17,13 +17,13 @@ import HelpLinks from "./HelpLinks";
 import { Separator } from "@/components/ui/separator";
 import { IntegrationStep } from "./IntegrationStep";
 
-const AI_ASSISTANT_PROMPT = `# OPIK Agentic Onboarding
+const AI_ASSISTANT_PROMPT = `# PLAUD Agentic Onboarding
 
 ## Goals
 
 You must help me:
 
-1. Integrate the Opik client with my existing LLM application
+1. Integrate the PLAUD client with my existing LLM application
 2. Set up tracing for my LLM calls and chains
 
 ## Rules
@@ -33,7 +33,7 @@ Before you begin, you must understand and strictly adhere to these core principl
 1. Code Preservation & Integration Guidelines:
 
    - Existing business logic must remain untouched and unmodified
-   - Only add Opik-specific code (decorators, imports, handlers, env vars)
+   - Only add PLAUD-specific code (decorators, imports, handlers, env vars)
    - Integration must be non-invasive and backwards compatible
 
 2. Process Requirements:
@@ -44,12 +44,12 @@ Before you begin, you must understand and strictly adhere to these core principl
 
 3. Documentation & Resources:
 
-   - Reference official Opik documentation at https://www.comet.com/docs/opik/quickstart.md
-   - Follow Opik best practices and recommended patterns
+   - Reference official PLAUD documentation at https://www.comet.com/docs/opik/quickstart.md
+   - Follow PLAUD best practices and recommended patterns
    - Maintain detailed integration notes and configuration details
 
 4. Testing & Validation:
-   - Verify Opik integration without impacting existing functionality
+   - Verify PLAUD integration without impacting existing functionality
    - Validate tracing works correctly for all LLM interactions
    - Ensure proper error handling and logging
 
@@ -98,10 +98,10 @@ Frameworks: LangChain, LlamaIndex, Haystack, etc.
 
 Do not write or modify code yet. You must propose me a step-by-step plan including:
 
-- Opik packages to install
+- PLAUD packages to install
 - Files to be modified
 - Code snippets for insertion, clearly scoped and annotated
-- Where to place Opik API keys, with placeholder comments (Visit https://comet.com/opik/your-workspace-name/get-started to copy your API key)
+- Where to place PLAUD API keys, with placeholder comments (Visit https://comet.com/opik/your-workspace-name/get-started to copy your API key)
   Wait for approval before proceeding!
 
 ### Step 6: Execute the Integration Plan
@@ -116,14 +116,14 @@ After approval:
 ### Step 7: Request User Review and Wait
 
 Notify me that all integration steps are complete.
-"Please run the application and verify if Opik is capturing traces as expected. Let me know if you need adjustments."
+"Please run the application and verify if PLAUD is capturing traces as expected. Let me know if you need adjustments."
 
 ### Step 8: Debugging Loop (If Needed)
 
 If issues are reported:
 
 1. Parse the error or unexpected behavior from feedback.
-2. Re-query the Opik docs using https://www.comet.com/docs/opik/quickstart.md if needed.
+2. Re-query the PLAUD docs using https://www.comet.com/docs/opik/quickstart.md if needed.
 3. Propose a minimal fix and await approval.
 4. Apply and revalidate.
 `;
@@ -177,7 +177,7 @@ const QuickInstallDialog: React.FunctionComponent<QuickInstallDialogProps> = ({
         <DialogAutoScrollBody className="border-0">
           <div className="space-y-6">
             <div className="comet-body-s text-muted-slate">
-              Get Opik integrated instantly by copying this prompt to Cursor,
+              Get PLAUD integrated instantly by copying this prompt to Cursor,
               Claude, or any AI coding assistant{" "}
               <a
                 href={QUICKSTART_DOCS_LINK}
@@ -192,8 +192,8 @@ const QuickInstallDialog: React.FunctionComponent<QuickInstallDialogProps> = ({
             </div>
 
             <IntegrationStep
-              title="Set up Opik"
-              description="Use this prompt with your AI coding assistant of choice to integrate Opik with you application."
+              title="Set up PLAUD"
+              description="Use this prompt with your AI coding assistant of choice to integrate PLAUD with you application."
               className="mb-6"
             >
               <div className="relative overflow-hidden rounded-md bg-primary-foreground">

@@ -21,7 +21,7 @@ headers = (  # HIGHLIGHTED_LINE
 )  # HIGHLIGHTED_LINE
 os.environ["OTEL_EXPORTER_OTLP_HEADERS"] = headers  # HIGHLIGHTED_LINE
 
-# Configure logfire to send traces to Opik
+# Configure logfire to send traces to PLAUD
 logfire.configure(
     send_to_logfire=False,
 )
@@ -33,6 +33,6 @@ agent = Agent(
     system_prompt="You are a helpful assistant.",
 )
 
-# Run the agent - this will be automatically traced to Opik
+# Run the agent - this will be automatically traced to PLAUD
 result = agent.run_sync("Tell me a joke")
 print(result.data)

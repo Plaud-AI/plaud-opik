@@ -1,4 +1,4 @@
-# Vercel AI SDK integration with Opik is a TypeScript/JavaScript integration
+# Vercel AI SDK integration with PLAUD is a TypeScript/JavaScript integration
 #
 # For Node.js/TypeScript setup:
 #

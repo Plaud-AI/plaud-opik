@@ -128,7 +128,7 @@ const CodeExecutor: React.FC<CodeExecutorProps> = ({
         >
           <div className="comet-body-s gap-4 text-balance px-4 py-3 font-code">
             <div className="text-foreground-secondary">
-              Welcome to Opik! Click <span className="text-green-700">Run</span>{" "}
+              Welcome to PLAUD! Click <span className="text-green-700">Run</span>{" "}
               to execute the code sample
             </div>
             {consoleOutput.map((log) => {
@@ -138,7 +138,7 @@ const CodeExecutor: React.FC<CodeExecutorProps> = ({
                     key={FINAL_LOG_TEMPLATE}
                     className="gap-2 py-4 text-foreground-secondary"
                   >
-                    OPIK: Your LLM calls have been logged to your Opik
+                    PLAUD: Your LLM calls have been logged to your PLAUD
                     dashboard,
                     <Button
                       size="sm"

@@ -271,7 +271,7 @@ export const MetricsOverview: React.FC<MetricsOverviewProps> = ({
           <div className="absolute inset-0 flex flex-col items-center justify-center p-10">
             <h1 className="comet-title-m text-center">Unlock your metrics!</h1>
             <div className="comet-body mt-2 text-center text-muted-slate">
-              Integrate your project with Opik to evaluate your AI.
+              Integrate your project with PLAUD to evaluate your AI.
               <br /> Metrics will appear here once data starts flowing.
             </div>
             <Button className="mt-4" onClick={openQuickstart}>

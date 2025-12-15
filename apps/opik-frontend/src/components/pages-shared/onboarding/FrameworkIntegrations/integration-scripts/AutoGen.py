@@ -31,7 +31,7 @@ os.environ["OTEL_EXPORTER_OTLP_HEADERS"] = headers  # HIGHLIGHTED_LINE
 
 
 def setup_telemetry():
-    """Configure OpenTelemetry with Opik"""
+    """Configure OpenTelemetry with PLAUD"""
     resource = Resource.create(
         {
             "service.name": "autogen-demo",
