@@ -257,7 +257,7 @@ services:
       dockerfile: Dockerfile
     hostname: demo-data-generator
     environment:
-      CREATE_DEMO_DATA: ${CREATE_DEMO_DATA:-true}
+      CREATE_DEMO_DATA: ${CREATE_DEMO_DATA:-false}
       PYTHON_BACKEND_URL: ${PYTHON_BACKEND_URL:-http://python-backend:${PYTHON_BACKEND_PORT:-8000}}
     command: [ "sh", "-c", "./demo_data_entrypoint.sh" ]
     depends_on:
