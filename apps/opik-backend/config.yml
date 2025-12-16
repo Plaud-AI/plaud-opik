@@ -171,6 +171,23 @@ authentication:
   # Description: Configures base url for React service, used for user management and authentication
   reactService:
     url: ${REACT_SERVICE_URL:-http://react-svc:8080}
+  # Local authentication configuration for simple username/password login
+  localAuth:
+    # Default: false
+    # Description: Whether or not to enable local authentication
+    enabled: ${LOCAL_AUTH_ENABLED:-true}
+    # Default: 7
+    # Description: Session duration in days
+    sessionDurationDays: ${LOCAL_AUTH_SESSION_DAYS:-7}
+    # Default: opik-local-auth-secret-key-change-in-production
+    # Description: Secret key for session token generation
+    sessionSecret: ${LOCAL_AUTH_SESSION_SECRET:-opik-local-auth-secret-key-change-in-production}
+    # Description: List of users for local authentication
+    users:
+      - username: ${LOCAL_AUTH_USER1_USERNAME:-admin}
+        password: ${LOCAL_AUTH_USER1_PASSWORD:-admin123}
+      - username: ${LOCAL_AUTH_USER2_USERNAME:-plaud}
+        password: ${LOCAL_AUTH_USER2_PASSWORD:-plaud123}
 
 # https://www.dropwizard.io/en/stable/manual/configuration.html#servers
 server:

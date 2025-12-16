@@ -45,6 +45,7 @@ import AlertsRouteWrapper from "@/components/pages/AlertsPage/AlertsRouteWrapper
 import AddEditAlertPage from "./components/pages/AlertsPage/AddEditAlertPage/AddEditAlertPage";
 import DashboardPage from "@/components/pages/DashboardPage/DashboardPage";
 import DashboardsPage from "@/components/pages/DashboardsPage/DashboardsPage";
+import LoginPage from "@/components/pages/LoginPage/LoginPage";
 
 declare module "@tanstack/react-router" {
   interface StaticDataRouteOption {
@@ -491,7 +492,15 @@ const automationLogsRoute = createRoute({
   component: AutomationLogsPage,
 });
 
+// ----------- Login (no auth required)
+const loginRoute = createRoute({
+  path: "/login",
+  getParentRoute: () => rootRoute,
+  component: LoginPage,
+});
+
 const routeTree = rootRoute.addChildren([
+  loginRoute,
   workspaceGuardEmptyLayoutRoute.addChildren([automationLogsRoute]),
   workspaceGuardPartialLayoutRoute.addChildren([
     quickstartRoute,

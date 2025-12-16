@@ -42,6 +42,16 @@ public class AuthModule extends DropwizardAwareModule<OpikConfiguration> {
         return new RemoteAuthService(client(), config.getReactService(), requestContext, cacheService);
     }
 
+    @Provides
+    @Singleton
+    public LocalAuthService localAuthService(
+            @Config("authentication") AuthenticationConfig config) {
+        if (config.getLocalAuth() != null && config.getLocalAuth().isEnabled()) {
+            return new LocalAuthService(config.getLocalAuth());
+        }
+        return new LocalAuthService(null);
+    }
+
     public Client client() {
         return ClientBuilder.newClient();
     }
