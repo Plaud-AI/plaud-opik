@@ -116,7 +116,7 @@ services:
 
   backend:
     image: ghcr.io/comet-ml/opik/opik-backend:${OPIK_VERSION:-latest}
-    pull_policy: always
+    pull_policy: ${OPIK_PULL_POLICY:-always}
     profiles:
       - backend
       - opik
@@ -270,7 +270,7 @@ services:
 
   frontend:
     image: ghcr.io/comet-ml/opik/opik-frontend:${OPIK_VERSION:-latest}
-    pull_policy: always
+    pull_policy: ${OPIK_PULL_POLICY:-always}
     profiles:
       - opik
       - local-be
