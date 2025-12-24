@@ -66,26 +66,27 @@ export const TREE_FILTER_COLUMNS: ColumnData<Span>[] = [
     type: COLUMN_TYPE.list,
     iconType: "tags",
   },
-  {
-    id: "usage.total_tokens",
-    label: "Total tokens",
-    type: COLUMN_TYPE.number,
-  },
-  {
-    id: "usage.prompt_tokens",
-    label: "Total input tokens",
-    type: COLUMN_TYPE.number,
-  },
-  {
-    id: "usage.completion_tokens",
-    label: "Total output tokens",
-    type: COLUMN_TYPE.number,
-  },
-  {
-    id: "total_estimated_cost",
-    label: "Estimated cost",
-    type: COLUMN_TYPE.cost,
-  },
+  // Hidden: Total tokens, input tokens, output tokens, and cost columns
+  // {
+  //   id: "usage.total_tokens",
+  //   label: "Total tokens",
+  //   type: COLUMN_TYPE.number,
+  // },
+  // {
+  //   id: "usage.prompt_tokens",
+  //   label: "Total input tokens",
+  //   type: COLUMN_TYPE.number,
+  // },
+  // {
+  //   id: "usage.completion_tokens",
+  //   label: "Total output tokens",
+  //   type: COLUMN_TYPE.number,
+  // },
+  // {
+  //   id: "total_estimated_cost",
+  //   label: "Estimated cost",
+  //   type: COLUMN_TYPE.cost,
+  // },
   {
     id: "error_info",
     label: "Errors",

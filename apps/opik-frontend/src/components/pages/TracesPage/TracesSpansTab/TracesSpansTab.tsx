@@ -188,41 +188,42 @@ const SHARED_COLUMNS: ColumnData<BaseTraceData>[] = [
     iconType: "tags",
     cell: ListCell as never,
   },
-  {
-    id: "usage.total_tokens",
-    label: "Total tokens",
-    type: COLUMN_TYPE.number,
-    accessorFn: (row) =>
-      row.usage && isNumber(row.usage.total_tokens)
-        ? `${row.usage.total_tokens}`
-        : "-",
-  },
-  {
-    id: "usage.prompt_tokens",
-    label: "Total input tokens",
-    type: COLUMN_TYPE.number,
-    accessorFn: (row) =>
-      row.usage && isNumber(row.usage.prompt_tokens)
-        ? `${row.usage.prompt_tokens}`
-        : "-",
-  },
-  {
-    id: "usage.completion_tokens",
-    label: "Total output tokens",
-    type: COLUMN_TYPE.number,
-    accessorFn: (row) =>
-      row.usage && isNumber(row.usage.completion_tokens)
-        ? `${row.usage.completion_tokens}`
-        : "-",
-  },
-  {
-    id: "total_estimated_cost",
-    label: "Estimated cost",
-    type: COLUMN_TYPE.cost,
-    cell: CostCell as never,
-    explainer: EXPLAINERS_MAP[EXPLAINER_ID.hows_the_cost_estimated],
-    size: 160,
-  },
+  // Hidden: Total tokens, input tokens, output tokens, and cost columns
+  // {
+  //   id: "usage.total_tokens",
+  //   label: "Total tokens",
+  //   type: COLUMN_TYPE.number,
+  //   accessorFn: (row) =>
+  //     row.usage && isNumber(row.usage.total_tokens)
+  //       ? `${row.usage.total_tokens}`
+  //       : "-",
+  // },
+  // {
+  //   id: "usage.prompt_tokens",
+  //   label: "Total input tokens",
+  //   type: COLUMN_TYPE.number,
+  //   accessorFn: (row) =>
+  //     row.usage && isNumber(row.usage.prompt_tokens)
+  //       ? `${row.usage.prompt_tokens}`
+  //       : "-",
+  // },
+  // {
+  //   id: "usage.completion_tokens",
+  //   label: "Total output tokens",
+  //   type: COLUMN_TYPE.number,
+  //   accessorFn: (row) =>
+  //     row.usage && isNumber(row.usage.completion_tokens)
+  //       ? `${row.usage.completion_tokens}`
+  //       : "-",
+  // },
+  // {
+  //   id: "total_estimated_cost",
+  //   label: "Estimated cost",
+  //   type: COLUMN_TYPE.cost,
+  //   cell: CostCell as never,
+  //   explainer: EXPLAINERS_MAP[EXPLAINER_ID.hows_the_cost_estimated],
+  //   size: 160,
+  // },
 ];
 
 const DEFAULT_TRACES_COLUMN_PINNING: ColumnPinningState = {

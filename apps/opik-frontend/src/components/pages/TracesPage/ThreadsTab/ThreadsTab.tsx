@@ -159,23 +159,24 @@ const SHARED_COLUMNS: ColumnData<Thread>[] = [
 
 const DEFAULT_COLUMNS: ColumnData<Thread>[] = [
   ...SHARED_COLUMNS,
-  {
-    id: `${COLUMN_USAGE_ID}.total_tokens`,
-    label: "Total tokens",
-    type: COLUMN_TYPE.number,
-    accessorFn: (row) =>
-      row.usage && isNumber(row.usage.total_tokens)
-        ? `${row.usage.total_tokens}`
-        : "-",
-  },
-  {
-    id: "total_estimated_cost",
-    label: "Estimated cost",
-    type: COLUMN_TYPE.cost,
-    cell: CostCell as never,
-    explainer: EXPLAINERS_MAP[EXPLAINER_ID.hows_the_thread_cost_estimated],
-    size: 160,
-  },
+  // Hidden: Total tokens and cost columns
+  // {
+  //   id: `${COLUMN_USAGE_ID}.total_tokens`,
+  //   label: "Total tokens",
+  //   type: COLUMN_TYPE.number,
+  //   accessorFn: (row) =>
+  //     row.usage && isNumber(row.usage.total_tokens)
+  //       ? `${row.usage.total_tokens}`
+  //       : "-",
+  // },
+  // {
+  //   id: "total_estimated_cost",
+  //   label: "Estimated cost",
+  //   type: COLUMN_TYPE.cost,
+  //   cell: CostCell as never,
+  //   explainer: EXPLAINERS_MAP[EXPLAINER_ID.hows_the_thread_cost_estimated],
+  //   size: 160,
+  // },
   {
     id: "created_by",
     label: "Created by",

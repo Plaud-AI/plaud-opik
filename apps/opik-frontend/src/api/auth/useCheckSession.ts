@@ -21,3 +21,5 @@ export default function useCheckSession(options?: QueryConfig<SessionUser>) {
     ...options,
   });
 }
+
+
